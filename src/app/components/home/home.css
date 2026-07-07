@@ -1,0 +1,164 @@
+
+h3, h4, h5, h6, p{
+    text-align: center;
+    color: #b0b0b0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h2{
+    font-family: Bebas Neue;
+    color: #b0b0b0;
+    text-align: center;
+    
+}
+
+h1{
+    font-family: Bebas Neue;
+    color: #ff0000;
+    animation: flash 1.5s infinite; /* ANIMAÇÃO: 'flash' dura 1.5s e repete infinitamente */
+}
+
+img{
+    width: 90%;       /* MEDIDA RELATIVA: ocupa 90% do elemento pai, se adapta ao tamanho da tela */
+    max-width: 450px; /* MEDIDA FIXA: limite máximo absoluto de 450px */
+    margin: auto;
+    border-radius: 12px; /* MEDIDA RELATIVA: bordas arredondadas proporcionais ao tamanho da imagem */
+    transition: transform 0.3s ease; /* ANIMAÇÃO: transição suave de 0.3s ao fazer hover */
+    border: 3px solid #111111; /* MEDIDA FIXA: borda sempre de 3px */
+}
+img:hover {
+    transform: scale(1.05); /* ANIMAÇÃO: escala a imagem em 5% ao passar o mouse */
+}
+img:focus {
+    transform: scale(1.05); /* ANIMAÇÃO: mesma escala ativada por teclado (acessibilidade) */
+    outline: 2px solid #ffffff;
+}
+
+.container{
+    align-items: center;    /* FLEXBOX: centraliza filhos no eixo cruzado (horizontal) */
+    display: flex;          /* FLEXBOX: ativa o modelo de layout Flexbox */
+    text-align: center;
+    flex-direction: column; /* FLEXBOX: organiza os filhos em coluna (eixo principal = vertical) */
+}
+
+#container1{
+    background-color: #111111;
+    border: 3px solid #1e1e1e;
+    border-radius: 12px; /* MEDIDA RELATIVA: bordas arredondadas proporcionais ao tamanho do container */
+}
+
+@keyframes flash{           /* ANIMAÇÃO: define os keyframes da animação 'flash' */
+    0%{
+        opacity: 1;         /* ANIMAÇÃO: começa totalmente visível */
+    }
+    50%{
+        opacity: 0.3;       /* ANIMAÇÃO: no meio do ciclo fica quase transparente */
+    }
+    100%{
+        opacity: 1;         /* ANIMAÇÃO: termina totalmente visível novamente */
+        color: #ff1a1a; /* ANIMAÇÃO: muda a cor para um vermelho mais intenso no final do ciclo */
+    }
+}
+
+/* MOBILE FIRST + RESPONSIVIDADE: breakpoint para desktop */
+@media (min-width: 75rem) {          /* MEDIDA RELATIVA: 75rem = 1200px */
+    h1 { font-size: 56px; }          /* MEDIDA FIXA: tamanho maior para telas grandes */
+    #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa{
+        display: grid;                      /* GRID: ativa o layout de grade */
+        grid-template-columns: 1fr 1fr 1fr; /* GRID + MEDIDA RELATIVA: 3 colunas iguais no desktop */
+    } 
+}
+
+/* RESPONSIVIDADE: estilo para telas menores que tablet */
+@media (max-width: 47.9rem) {        /* MEDIDA RELATIVA: limite máximo para mobile */
+    h1 { font-size: 32px; }          /* MEDIDA FIXA: tamanho reduzido para telas pequenas */
+    #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa {
+        display: grid;               /* GRID: mantém o grid ativo */
+        grid-template-columns: 1fr;  /* GRID + RESPONSIVIDADE: 1 coluna única em mobile */
+    }
+}
+
+/* MOBILE FIRST + RESPONSIVIDADE: breakpoint para tablet (min-width começa do menor para o maior) */
+@media (min-width: 48rem) {          /* MEDIDA RELATIVA: 48rem = 768px, escala com o root font-size */
+    h1 { font-size: 40px; }          /* MEDIDA FIXA: tamanho fixo para tablet */
+    #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa{
+        display: grid;                      /* GRID: ativa o layout de grade */
+        grid-template-columns: 1fr 1fr 1fr; /* GRID + MEDIDA RELATIVA: 3 colunas de tamanho igual e flexível */
+    }
+}
+
+/* RESPONSIVIDADE: estilo para telas muito pequenas (smartphones pequenos) */
+@media (max-width: 30rem) {          /* MEDIDA RELATIVA: 30rem = 480px */
+    h1 { font-size: 24px; }          /* MEDIDA FIXA: tamanho mínimo para telas muito pequenas */
+    #containerimagen3, #containerimagen1, #containerimagen4, #container-mapa {
+        display: grid;               /* GRID: mantém o grid ativo */
+        grid-template-columns: 1fr;  /* GRID + RESPONSIVIDADE: coluna única para mobile pequeno */
+    }
+}
+
+#containerimagen3, #containerimagen1, #containerimagen4, #container-mapa{
+    text-align: center;
+    align-items: center;
+    gap: 15px;       /* MEDIDA FIXA: espaço fixo de 15px entre os itens do grid */
+    margin-top: 20px; /* MEDIDA FIXA: espaço superior fixo de 20px */
+    background-color: #111111;
+    border: 3px solid #1e1e1e; /* MEDIDA FIXA: borda sempre de 3px */
+    padding: 16px;
+    border-radius: 8px;
+}
+
+nav {
+    display: flex;           /* FLEXBOX: ativa o Flexbox no nav */
+    justify-content: center; /* FLEXBOX: centraliza os links no eixo principal (horizontal) */
+    gap: 10px;               /* FLEXBOX + MEDIDA FIXA: espaço de 10px entre os links */
+    margin-bottom: 30px;     /* MEDIDA FIXA: espaço inferior fixo de 30px */
+    margin-top: 20px;        /* MEDIDA FIXA: espaço superior fixo de 20px */
+}
+nav a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer {
+    text-align: center;
+    color: #fffefe;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 3px solid #111111; /* MEDIDA FIXA: borda sempre de 3px */
+    border-radius: 12px; /* MEDIDA RELATIVA: bordas arredondadas proporcionais ao tamanho do footer */
+}
+
+span {
+    color: #ff1a1a; /* ANIMAÇÃO: muda a cor para um vermelho mais intenso no final do ciclo */
+    animation: flash 1.5s infinite; /* ANIMAÇÃO: reutiliza a animação 'flash' definida nos keyframes */
+}
+
+iframe {
+    border: 3px solid rgb(255, 255, 255); /* MEDIDA FIXA: borda de 3px */
+    border-radius: 10%; /* MEDIDA RELATIVA: arredondamento proporcional */
+    margin-top: 20px;   /* MEDIDA FIXA: espaço superior de 20px */
+}
+
+video {
+    width: 90%;       /* MEDIDA RELATIVA: ocupa 90% do pai, responsivo */
+    max-width: 900px; /* MEDIDA FIXA: limite máximo de 900px */
+    margin: auto;
+    border-radius: 5%; /* MEDIDA RELATIVA: bordas proporcionais */
+    border: 3px solid #111111; /* MEDIDA FIXA: borda de 3px */
+}
+
+a:focus {
+    outline: 2px solid #1500ff; /* MEDIDA FIXA: contorno de acessibilidade de 2px */
+    outline-offset: 4px;        /* MEDIDA FIXA: distância fixa de 4px entre o link e o contorno */
+}
+ button {
+    background-color: #1e1e1e;
+    color: #b0b0b0;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+    position: relative;
+    text-align: center;
+}
